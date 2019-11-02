@@ -1,4 +1,4 @@
-{% set version = "0.9" %}
+{% set version = "0.9.1" %}
 
 package:
   name: pockets
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pockets/pockets-{{ version }}.tar.gz
-  sha256: 5821c8d535203dffa95e79811033c82b736dc90a3e1c2d08469cf10844263d07
+  sha256: 9320f1a3c6f7a9133fe3b571f283bcf3353cd70249025ae8d618e40e9f7e92b3
 
 build:
   number: 0
