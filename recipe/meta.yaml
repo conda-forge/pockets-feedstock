@@ -5,23 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pockets/pockets-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pockets/pockets-{{ version }}.tar.gz
   sha256: 9320f1a3c6f7a9133fe3b571f283bcf3353cd70249025ae8d618e40e9f7e92b3
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
+    - setuptools
     - pip
-    - python
   run:
-    - python
+    - python >={{ python_min }}
     - six >=1.5.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pockets
 
